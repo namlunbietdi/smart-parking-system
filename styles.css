@@ -71,6 +71,14 @@ button {
     background-color: #218838;
 }
 /* Thêm vào file styles.css */
+/* Thêm vào file styles.css */
+/* Thêm vào file styles.css */
+.back-button-container {
+    text-align: right; /* Căn phải nút */
+    margin-top: 20px; /* Khoảng cách với phần trên */
+    padding: 20px; /* Thêm padding để tạo khoảng cách */
+}
+
 .back-button {
     padding: 10px 20px;
     background-color: #007bff;
@@ -79,7 +87,6 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    margin-bottom: 20px;
 }
 
 .back-button:hover {
