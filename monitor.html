@@ -4,67 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hệ thống giám sát bãi đỗ xe</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Sử dụng chung file CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Thêm thư viện Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-database-compat.js"></script>
 </head>
 <body>
-    <div class="monitor-container">
+<div class="monitor-container">
+    <h1>Hệ thống giám sát bãi đỗ xe</h1>
 
-        <h1>Hệ thống giám sát bãi đỗ xe</h1>
-
-        <!-- Phần camera lối vào và lối ra -->
-        <div class="camera-section">
-            <div class="camera-box">
-                <h2>Lối vào</h2>
-                <div class="camera-frame"></div>
-                <div class="info-box">
-                    <input type="text" placeholder="Biển kiểm soát" readonly>
-                    <input type="text" placeholder="Thời gian vào" readonly>
-                    <div class="button-group">
-                        <button class="barrier-button">Mở barrier vào</button>
-                        <button class="barrier-button">Đóng barrier vào</button>
-                    </div>
-                </div>
-            </div>
-            <div class="camera-box">
-                <h2>Lối ra</h2>
-                <div class="camera-frame"></div>
-                <div class="info-box">
-                    <input type="text" placeholder="Biển kiểm soát" readonly>
-                    <input type="text" placeholder="Thời gian ra" readonly>
-                    <div class="button-group">
-                        <button class="barrier-button">Mở barrier ra</button>
-                        <button class="barrier-button">Đóng barrier ra</button>
-                    </div>
+    <!-- Phần camera lối vào và lối ra -->
+    <div class="camera-section">
+        <div class="camera-box">
+            <h2>Lối vào</h2>
+            <div class="camera-frame"></div>
+            <div class="info-box">
+                <input type="text" placeholder="Biển kiểm soát" readonly>
+                <input type="text" placeholder="Thời gian vào" readonly>
+                <div class="button-group">
+                    <button onclick="sendControlSignalOpen()" class="barrier-button" id="openBarrierIn">Mở barrier vào</button>
+                    <button onclick="sendControlSignalClose()" class="barrier-button" id="closeBarrierIn">Đóng barrier vào</button>
                 </div>
             </div>
         </div>
-
-        <!-- Phần camera giám sát chỗ đỗ xe -->
-        <div class="parking-section">
-            <h2>Giám sát chỗ đỗ xe</h2>
-            <div class="parking-grid">
-                <div class="parking-spot">
-                    <div class="camera-frame"></div>
-                    <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
-                </div>
-                <div class="parking-spot">
-                    <div class="camera-frame"></div>
-                    <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
-                </div>
-                <div class="parking-spot">
-                    <div class="camera-frame"></div>
-                    <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
-                </div>
-                <div class="parking-spot">
-                    <div class="camera-frame"></div>
-                    <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
+        <div class="camera-box">
+            <h2>Lối ra</h2>
+            <div class="camera-frame"></div>
+            <div class="info-box">
+                <input type="text" placeholder="Biển kiểm soát" readonly>
+                <input type="text" placeholder="Thời gian ra" readonly>
+                <div class="button-group">
+                    <button onclick="sendControlSignalOpen()" class="barrier-button" id="openBarrierOut">Mở barrier ra</button>
+                    <button onclick="sendControlSignalClose()" class="barrier-button" id="closeBarrierOut">Đóng barrier ra</button>
                 </div>
             </div>
-        </div>
-        <div class="back-button-container">
-            <button class="back-button" id="backButton">Quay lại</button>
         </div>
     </div>
-    <script src="script.js"></script> <!-- Liên kết file JavaScript -->
+
+    <!-- Phần camera giám sát chỗ đỗ xe -->
+    <div class="parking-section">
+        <h2>Giám sát chỗ đỗ xe</h2>
+        <div class="parking-grid">
+            <div class="parking-spot">
+                <div class="camera-frame"></div>
+                <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
+            </div>
+            <div class="parking-spot">
+                <div class="camera-frame"></div>
+                <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
+            </div>
+            <div class="parking-spot">
+                <div class="camera-frame"></div>
+                <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
+            </div>
+            <div class="parking-spot">
+                <div class="camera-frame"></div>
+                <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nút Quay lại -->
+    <div class="back-button-container">
+        <button class="back-button" id="backButton">Quay lại</button>
+    </div>
+</div>
+<script>
+    // Cấu hình Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyDpfQm3P3aWStekra3YQ3v2OUZNaWsokhY",
+        authDomain: "testcn-ccace.firebaseapp.com",
+        databaseURL: "https://testcn-ccace-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "testcn-ccace",
+        storageBucket: "testcn-ccace.firebasestorage.app",
+        messagingSenderId: "336091133707",
+        appId: "1:336091133707:web:12a984bd3754ad157fd40e"
+    };
+
+    // Khởi tạo Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    // Hàm gửi dữ liệu góc mở barrier lên Firebase
+    function sendControlSignalOpen() {
+        var angle = 90; // Góc mở barrier
+        database.ref('servo/angle').set(angle)
+            .then(() => {
+                console.log("Dữ liệu đã được gửi lên Firebase thành công!");
+            })
+            .catch((error) => {
+                console.error("Lỗi khi gửi dữ liệu lên Firebase: ", error);
+            });
+    }
+    function sendControlSignalClose() {
+        var angle = 0; // Góc mở barrier
+        database.ref('servo/angle').set(angle)
+            .then(() => {
+                console.log("Dữ liệu đã được gửi lên Firebase thành công!");
+            })
+            .catch((error) => {
+                console.error("Lỗi khi gửi dữ liệu lên Firebase: ", error);
+            });
+    }
+
+</script>
+<script src="script.js"></script>
 </body>
 </html>

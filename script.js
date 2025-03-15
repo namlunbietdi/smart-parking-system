@@ -5,7 +5,7 @@ if (document.getElementById("loginForm")) {
     document.getElementById("loginForm").addEventListener("submit", function (event) {
         event.preventDefault(); // Ngăn form gửi đi
 
-        // Lấy giá trị nhập vào
+        // Lấy giá trị nhập vào`
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
