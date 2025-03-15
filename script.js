@@ -1,4 +1,6 @@
 // script.js
+
+// Phần xử lý đăng nhập
 document.getElementById("loginForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Ngăn form gửi đi
 

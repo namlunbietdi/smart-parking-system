@@ -7,53 +7,63 @@
     <link rel="stylesheet" href="styles.css"> <!-- Sử dụng chung file CSS -->
 </head>
 <body>
-<div class="monitor-container">
-    <h1>Hệ thống giám sát bãi đỗ xe</h1>
+    <div class="monitor-container">
+        <!-- Nút Quay lại -->
+        <button class="back-button" onclick="window.location.href = 'main.html';">Quay lại</button>
 
-    <!-- Phần camera lối vào và lối ra -->
-    <div class="camera-section">
-        <div class="camera-box">
-            <h2>Lối vào</h2>
-            <div class="camera-frame"></div>
-            <div class="info-box">
-                <input type="text" placeholder="Biển kiểm soát" readonly>
-                <input type="text" placeholder="Thời gian vào" readonly>
-                <button class="barrier-button">Mở barrier vào</button>
+        <h1>Hệ thống giám sát bãi đỗ xe</h1>
+
+        <!-- Phần camera lối vào và lối ra -->
+        <div class="camera-section">
+            <div class="camera-box">
+                <h2>Lối vào</h2>
+                <div class="camera-frame"></div>
+                <div class="info-box">
+                    <input type="text" placeholder="Biển kiểm soát" readonly>
+                    <input type="text" placeholder="Thời gian vào" readonly>
+                    <div class="button-group">
+                        <button class="barrier-button">Mở barrier vào</button>
+                        <button class="barrier-button">Đóng barrier vào</button>
+                    </div>
+                </div>
+            </div>
+            <div class="camera-box">
+                <h2>Lối ra</h2>
+                <div class="camera-frame"></div>
+                <div class="info-box">
+                    <input type="text" placeholder="Biển kiểm soát" readonly>
+                    <input type="text" placeholder="Thời gian ra" readonly>
+                    <div class="button-group">
+                        <button class="barrier-button">Mở barrier ra</button>
+                        <button class="barrier-button">Đóng barrier ra</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="camera-box">
-            <h2>Lối ra</h2>
-            <div class="camera-frame"></div>
-            <div class="info-box">
-                <input type="text" placeholder="Biển kiểm soát" readonly>
-                <input type="text" placeholder="Thời gian ra" readonly>
-                <button class="barrier-button">Đóng barrier ra</button>
+
+        <!-- Phần camera giám sát chỗ đỗ xe -->
+        <div class="parking-section">
+            <h2>Giám sát chỗ đỗ xe</h2>
+            <div class="parking-grid">
+                <div class="parking-spot">
+                    <div class="camera-frame"></div>
+                    <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
+                </div>
+                <div class="parking-spot">
+                    <div class="camera-frame"></div>
+                    <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
+                </div>
+                <div class="parking-spot">
+                    <div class="camera-frame"></div>
+                    <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
+                </div>
+                <div class="parking-spot">
+                    <div class="camera-frame"></div>
+                    <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- Phần camera giám sát chỗ đỗ xe -->
-    <div class="parking-section">
-        <h2>Giám sát chỗ đỗ xe</h2>
-        <div class="parking-grid">
-            <div class="parking-spot">
-                <div class="camera-frame"></div>
-                <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
-            </div>
-            <div class="parking-spot">
-                <div class="camera-frame"></div>
-                <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
-            </div>
-            <div class="parking-spot">
-                <div class="camera-frame"></div>
-                <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
-            </div>
-            <div class="parking-spot">
-                <div class="camera-frame"></div>
-                <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
-            </div>
-        </div>
-    </div>
-</div>
+    <script src="script.js"></script> <!-- Liên kết file JavaScript -->
 </body>
 </html>
