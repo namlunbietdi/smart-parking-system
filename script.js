@@ -1,6 +1,6 @@
 // script.js
 
-// Phần xử lý đăng nhập (chỉ chạy nếu có phần tử loginForm)
+// Phần xử lý đăng nhập
 if (document.getElementById("loginForm")) {
     document.getElementById("loginForm").addEventListener("submit", function (event) {
         event.preventDefault(); // Ngăn form gửi đi
@@ -21,10 +21,18 @@ if (document.getElementById("loginForm")) {
     });
 }
 
-// Phần xử lý nút Quay lại (chỉ chạy nếu có phần tử backButton)
+// Phần xử lý nút Quay lại
 if (document.getElementById("backButton")) {
     document.getElementById("backButton").addEventListener("click", function () {
         // Chuyển hướng về trang chính (main.html)
         window.location.href = "main.html";
+    });
+}
+
+// Phần xử lý mục Quản lý phương tiện
+if (document.getElementById("vehicleManagement")) {
+    document.getElementById("vehicleManagement").addEventListener("click", function () {
+        // Chuyển hướng sang trang quản lý phương tiện
+        window.location.href = "vehicle-management.html";
     });
 }

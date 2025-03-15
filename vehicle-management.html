@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý phương tiện</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Sử dụng chung file CSS -->
+</head>
+<body>
+<div class="vehicle-management-container">
+    <h1>Quản lý phương tiện</h1>
+
+    <!-- Bảng XE VÀO -->
+    <div class="table-container">
+        <h2>XE VÀO</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Biển số xe</th>
+                <th>Thời gian vào</th>
+                <th>Phí đỗ xe</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>29A-12345</td>
+                <td>10:00 01/10/2023</td>
+                <td>20,000 VND</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>30B-67890</td>
+                <td>11:30 01/10/2023</td>
+                <td>15,000 VND</td>
+            </tr>
+            <!-- Thêm dữ liệu mẫu hoặc dữ liệu động từ JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bảng XE RA -->
+    <div class="table-container">
+        <h2>XE RA</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Biển số xe</th>
+                <th>Thời gian ra</th>
+                <th>Trạng thái thanh toán</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>29A-12345</td>
+                <td>12:00 01/10/2023</td>
+                <td>Đã thanh toán</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>30B-67890</td>
+                <td>13:00 01/10/2023</td>
+                <td>Chưa thanh toán</td>
+            </tr>
+            <!-- Thêm dữ liệu mẫu hoặc dữ liệu động từ JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Nút Quay lại -->
+    <div class="back-button-container">
+        <button class="back-button" id="backButton">Quay lại</button>
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- Liên kết file JavaScript -->
+</body>
+</html>
