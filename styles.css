@@ -1,201 +1,211 @@
+/* styles.css */
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f4;
 }
 
-.header {
-    background-color: #001F5B;
-    color: white;
-    padding: 15px;
-    width: 100%;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
 .login-container {
-    background-color: #d3d3d3;
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
     text-align: center;
-    width: 320px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
-.login-container h2 {
-    color: #001F5B;
+
+h2 {
+    margin-bottom: 20px;
 }
+
 .input-group {
     margin-bottom: 15px;
     text-align: left;
 }
-.input-group label {
-    font-weight: bold;
-    color: #001F5B;
+
+label {
     display: block;
     margin-bottom: 5px;
 }
-.input-group input {
-    width: calc(100% - 16px);
+
+input {
+    width: 100%;
     padding: 8px;
+    box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
-    display: block;
 }
-.login-button {
-    background-color: white;
-    color: #001F5B;
-    font-weight: bold;
-    padding: 10px;
+
+button {
     width: 100%;
-    border: 1px solid #001F5B;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
 }
-.login-button:hover {
-    background-color: #e0e0e0;
+
+button:hover {
+    background-color: #218838;
 }
 
-/* dashboard */
-/* Nút menu (ba gạch) */
-.menu-icon {
-    font-size: 30px;
-    cursor: pointer;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1000;
-    background: #4A4A6A;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
+.error-message {
+    color: red;
+    margin-top: 10px;
+    display: none;
 }
-
-/* Sidebar */
-.sidebar {
-    width: 250px;
-    background: #4A4A6A;
-    color: white;
-    padding: 20px;
-    height: 100vh;
-    position: fixed;
-    left: -250px;
-    top: 0;
-    transition: 0.3s;
-    z-index: 999;
-}
-
-.sidebar h2 {
-    text-align: center;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    padding: 10px;
-    margin: 5px 0;
-    background: #63638A;
-    text-align: center;
-    cursor: pointer;
-}
-
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-}
-
-.sidebar ul li:hover {
-    background: #7A7AA3;
-}
-
-/* Khi sidebar mở */
-.sidebar.open {
-    left: 0;
-}
-
+/* styles.css */
 body {
-    font-family: 'Times New Roman', Times, serif, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-}
-.header {
-    background-color: #0A1E5D;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 24px;
-    font-weight: bold;
-}
-.container {
-    padding: 20px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
 }
-.gate-section {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
+
+.main-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
     margin-bottom: 20px;
 }
-.gate {
-    text-align: center;
-    width: 45%;
-    background: white;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px gray;
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
+
+.menu-item {
+    background-color: #28a745;
+    color: white;
+    padding: 40px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #218838;
+}
+
+.menu-item h2 {
+    margin: 0;
+    font-size: 24px;
+}
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.monitor-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.camera-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
 .camera-box {
+    flex: 1;
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.camera-frame {
     width: 100%;
-    height: 400px;
-    background: lightgray;
+    padding-top: 75%; /* Tỉ lệ 4:3 */
+    background-color: #ccc;
+    border-radius: 8px;
     margin-bottom: 10px;
 }
-.button {
-    padding: 5px 10px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    background: #9aceff;
-    color: white;
-    cursor: pointer;
-}
-.slot-container {
+
+.info-box {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    flex-direction: column;
+    gap: 10px;
 }
-.slot {
-    text-align: center;
-    width: 20%;
-    background: white;
+
+.info-box input {
     padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px gray;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
 }
-.slot-image {
+
+.barrier-button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.barrier-button:hover {
+    background-color: #218838;
+}
+
+.parking-section {
+    margin-top: 20px;
+}
+
+.parking-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.parking-spot {
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.parking-spot .camera-frame {
+    margin-bottom: 10px;
+}
+
+.parking-spot input {
     width: 100%;
-    height: 100px;
-    background: lightgray;
-}
-/* Khi sidebar mở, dịch phần nội dung chính sang phải */
-.main-content.sidebar-open {
-    margin-left: 250px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
 }

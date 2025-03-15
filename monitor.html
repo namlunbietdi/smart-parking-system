@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống giám sát bãi đỗ xe</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Sử dụng chung file CSS -->
+</head>
+<body>
+<div class="monitor-container">
+    <h1>Hệ thống giám sát bãi đỗ xe</h1>
+
+    <!-- Phần camera lối vào và lối ra -->
+    <div class="camera-section">
+        <div class="camera-box">
+            <h2>Lối vào</h2>
+            <div class="camera-frame"></div>
+            <div class="info-box">
+                <input type="text" placeholder="Biển kiểm soát" readonly>
+                <input type="text" placeholder="Thời gian vào" readonly>
+                <button class="barrier-button">Mở barrier vào</button>
+            </div>
+        </div>
+        <div class="camera-box">
+            <h2>Lối ra</h2>
+            <div class="camera-frame"></div>
+            <div class="info-box">
+                <input type="text" placeholder="Biển kiểm soát" readonly>
+                <input type="text" placeholder="Thời gian ra" readonly>
+                <button class="barrier-button">Đóng barrier ra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phần camera giám sát chỗ đỗ xe -->
+    <div class="parking-section">
+        <h2>Giám sát chỗ đỗ xe</h2>
+        <div class="parking-grid">
+            <div class="parking-spot">
+                <div class="camera-frame"></div>
+                <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
+            </div>
+            <div class="parking-spot">
+                <div class="camera-frame"></div>
+                <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
+            </div>
+            <div class="parking-spot">
+                <div class="camera-frame"></div>
+                <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
+            </div>
+            <div class="parking-spot">
+                <div class="camera-frame"></div>
+                <input type="text" placeholder="Trạng thái: Chưa có xe" readonly>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
